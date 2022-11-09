@@ -1,3 +1,5 @@
+from doctest import testmod
+
 def arithmeticSequence(A,n):
     SubSequence=[]
     ArithmeticSequences=[]
@@ -22,3 +24,27 @@ def distinct(A):
             if (set(item2) <= set(item)):
                 DistinctArithmeticSequences.remove(item2)
     return DistinctArithmeticSequences
+
+def main():
+    df = [1,10,11,20,21,30,40,41,50,60,61,70]
+    common_differene=10
+
+    arseq=arithmeticSequence(df,common_differene)
+    print(arseq)
+
+    darseq=distinct(arseq)
+    print(darseq)
+
+
+
+def test_arithmeticSequence():
+    """
+
+    """
+    pass
+
+
+if __name__ == "__main__":
+    main()
+else:
+    testmod()
