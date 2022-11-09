@@ -14,3 +14,11 @@ def arithmeticSequence(A,n):
                     found.append(pair2[1])
             if (len(found)>2): ArithmeticSequences.append(found)
     return ArithmeticSequences
+
+def distinct(A):
+    DistinctArithmeticSequences = A
+    for index,item in enumerate(A):
+        for index2,item2 in enumerate([x for x in A if x != item]):
+            if (set(item2) <= set(item)):
+                DistinctArithmeticSequences.remove(item2)
+    return DistinctArithmeticSequences
