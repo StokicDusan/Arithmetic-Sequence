@@ -14,4 +14,3 @@ def arithmeticSequence(A,n):
                     found.append(pair2[1])
             if (len(found)>2): ArithmeticSequences.append(found)
     return ArithmeticSequences
-
