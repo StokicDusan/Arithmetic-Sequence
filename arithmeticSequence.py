@@ -1,5 +1,3 @@
-from doctest import testmod
-
 def arithmeticSequence(A,n):
     SubSequence=[]
     ArithmeticSequences=[]
@@ -17,7 +15,7 @@ def arithmeticSequence(A,n):
             if (len(found)>2): ArithmeticSequences.append(found)
     return ArithmeticSequences
 
-def distinct(A):
+def distinctArithmeticSequences(A):
     DistinctArithmeticSequences = A
     for index,item in enumerate(A):
         for index2,item2 in enumerate([x for x in A if x != item]):
@@ -32,19 +30,8 @@ def main():
     arseq=arithmeticSequence(df,common_differene)
     print(arseq)
 
-    darseq=distinct(arseq)
+    darseq=distinctArithmeticSequences(arseq)
     print(darseq)
-
-
-
-def test_arithmeticSequence():
-    """
-
-    """
-    pass
-
 
 if __name__ == "__main__":
     main()
-else:
-    testmod()
