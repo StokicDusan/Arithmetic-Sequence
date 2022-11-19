@@ -1,14 +1,21 @@
 from math import ceil
 
 def arithmeticSequences(A: list,n:int = 0) -> list:
+    '''
+    arithmeticSequences(A,n) returns a list of lists of all arithmetic
+    sequences from list A with common difference n OR all common
+    differences if n = 0.
+    An arithmetic sequence is valid only if it has more then 2 items.
+    '''
     SubSequence = []
     ArithmeticSequences = []
-    #Create array of pairs from array A
+    # Create array of pairs from array A
     for index,item in enumerate(A[:-1]):
         for index2,item2 in enumerate(A[index+1:]):
             SubSequence.append([item,item2])
-    #finding arithmetic sequences
+    # Finding arithmetic sequences
     if (n == 0):
+        # if n is 0, find arithmetic sequences with all common differences
         for index,pair in enumerate(SubSequence):
             for commonDiff in range(1,ceil((A[-1]-A[0])/2)+1):
                 if (pair[1] - pair[0] == commonDiff):
@@ -18,6 +25,7 @@ def arithmeticSequences(A: list,n:int = 0) -> list:
                             found.append(pair2[1])
                     if (len(found)>2): ArithmeticSequences.append(found)
     else:
+        # if n is not 0, find arithmetic sequences common difference of n
         for index,pair in enumerate(SubSequence):
             if (pair[1] - pair[0] == n):
                 found = [pair[0],pair[1]]
@@ -28,13 +36,23 @@ def arithmeticSequences(A: list,n:int = 0) -> list:
     return ArithmeticSequences
 
 def distArSeq(A: list,n:int = 0) -> list:
+    '''
+    distArSeq(A,n) returns a list of lists of distinct arithmetic
+    sequences from list A with common difference n OR all common
+    differences if n = 0.
+    distArSeq(A,n) returns a list that has no arithmetic sequences that
+    are a subsequence of an existing sequence.
+    An arithmetic sequence is valid only if it has more then 2 items.
+    '''
     seq = arithmeticSequences(A,n)
     DistinctArithmeticSequences = seq
     for index,item in enumerate(seq):
         for index2,item2 in enumerate([x for x in seq if x != item]):
+            # Remove a sequence if it is a subsequence of an existing sequence
             if (set(item2) <= set(item)) and (item[1] - item[0] == item2[1] - item2[0]):
                 DistinctArithmeticSequences.remove(item2)
     return DistinctArithmeticSequences
+
 
 def test_arithmeticSequence() -> None:
     """
