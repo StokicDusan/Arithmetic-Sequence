@@ -53,7 +53,6 @@ def distArSeqCommon(A: list,n:int) -> list:
                 DistinctArithmeticSequences.remove(item2)
     return DistinctArithmeticSequences
 
-
 def test_arithmeticSequence() -> None:
     """
     >>> arSeq = [1,10,30,40,80,110]
