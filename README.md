@@ -6,28 +6,50 @@
 [![Forks][forks-shield]][forks-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-# Welcome to  Arithmetic-Sequence !!!
+# Welcome to Arithmetic-Sequence !!!
 
-//todo what is 
+A Python module for finding arithmetic sequences for a given sequence.  
+Just enter a list and get back all arithmetic sequences from it! 🚀
 
 ## What does the script do?
 
-## `file.py` :
-This script is ready to use script which uses one arguments to run. The argument is the integer passed for the check.
+Module returns a list of lists that contain arithmetic sequences found in the entered list
 
+## `arithmeticSequences(A,n)` :
+arithmeticSequences(A,n) returns a list of lists of all arithmetic sequences from list `A` with common difference `n` or all common differences if n = 0. This includes subsequences of existing sequences.  
+An arithmetic sequence is valid only if it has more then 2 items.
+
+## `distArSeq(A,n)` :
+distArSeq(A,n) returns a list of lists of distinct arithmetic sequences from list `A` with common difference `n` or all common differences if n = 0.  
+distArSeq(A,n) returns a list that has no arithmetic sequences that are a subsequence of an existing sequence.  
+An arithmetic sequence is valid only if it has more then 2 items.
+
+<!--- 
 ## How to use it
 #### 1. Clone this repository:
 ```bash
 $ git clone https://github.com/StokicDusan/Arithmetic-Sequence.git
 $ cd Arithmetic-Sequence/
 ```
-#### 2. Launch:
-
-//TODO
+--->
 
 ## Examples
-
-//TODO
+```python
+>>> import arithmeticSequence as ASE
+>>> arSeq = [61,10,11,30,21,20,40,41,50,60,1,70]
+>>> ASE.distArSeq(arSeq)
+[[1, 11, 21], [1, 21, 41, 61], [10, 20, 30, 40, 50, 60, 70], [10, 30, 50, 70], [10, 40, 70], [20, 40, 60]]
+>>> ASE.distArSeq(arSeq,20)
+[[1, 21, 41, 61], [10, 30, 50, 70], [20, 40, 60]]
+>>> arSeq = [2,10,17,24,31,38,45,52,60]
+>>> ASE.distArSeq(arSeq)
+[[2, 31, 60], [10, 17, 24, 31, 38, 45, 52], [10, 24, 38, 52], [10, 31, 52], [17, 31, 45]]
+>>> ASE.distArSeq(arSeq,7)
+[[10, 17, 24, 31, 38, 45, 52]]
+>>> arSeq = [1,10,30,40,80,110]
+>>> ASE.distArSeq(arSeq)
+[]
+```
 
 ## Provide Feedback 👍
 
