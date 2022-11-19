@@ -7,6 +7,7 @@ def arithmeticSequences(A: list,n:int = 0) -> list:
     differences if n = 0.
     An arithmetic sequence is valid only if it has more then 2 items.
     '''
+    A.sort()
     SubSequence = []
     ArithmeticSequences = []
     # Create array of pairs from array A
@@ -44,6 +45,7 @@ def distArSeq(A: list,n:int = 0) -> list:
     are a subsequence of an existing sequence.
     An arithmetic sequence is valid only if it has more then 2 items.
     '''
+    A.sort()
     seq = arithmeticSequences(A,n)
     DistinctArithmeticSequences = seq
     for index,item in enumerate(seq):
@@ -55,7 +57,7 @@ def distArSeq(A: list,n:int = 0) -> list:
 
 def test_arithmeticSequence() -> None:
     """
-    >>> arSeq = [1,10,11,20,21,30,40,41,50,60,61,70]
+    >>> arSeq = [61,10,11,30,21,20,40,41,50,60,1,70]
     >>> distArSeq(arSeq)
     [[1, 11, 21], [1, 21, 41, 61], [10, 20, 30, 40, 50, 60, 70], [10, 30, 50, 70], [10, 40, 70], [20, 40, 60]]
     >>> distArSeq(arSeq,20)
