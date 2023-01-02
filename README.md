@@ -46,6 +46,8 @@ $ cd Arithmetic-Sequence/
 [[2, 31, 60], [10, 17, 24, 31, 38, 45, 52], [10, 24, 38, 52], [10, 31, 52], [17, 31, 45]]
 >>> ASE.distArSeq(arSeq,7)
 [[10, 17, 24, 31, 38, 45, 52]]
+>>> ASE.distArSeq(arSeq,11)
+[]
 >>> arSeq = [1,10,30,40,80,110]
 >>> ASE.distArSeq(arSeq)
 []
