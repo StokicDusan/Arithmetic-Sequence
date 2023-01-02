@@ -36,11 +36,13 @@ $ cd Arithmetic-Sequence/
 ## Examples
 ```python
 >>> import arithmeticSequence as ASE
+
 >>> arSeq = [61,10,11,30,21,20,40,41,50,60,1,70]
 >>> ASE.distArSeq(arSeq)
 [[1, 11, 21], [1, 21, 41, 61], [10, 20, 30, 40, 50, 60, 70], [10, 30, 50, 70], [10, 40, 70], [20, 40, 60]]
 >>> ASE.distArSeq(arSeq,20)
 [[1, 21, 41, 61], [10, 30, 50, 70], [20, 40, 60]]
+
 >>> arSeq = [2,10,17,24,31,38,45,52,60]
 >>> ASE.distArSeq(arSeq)
 [[2, 31, 60], [10, 17, 24, 31, 38, 45, 52], [10, 24, 38, 52], [10, 31, 52], [17, 31, 45]]
@@ -48,6 +50,7 @@ $ cd Arithmetic-Sequence/
 [[10, 17, 24, 31, 38, 45, 52]]
 >>> ASE.distArSeq(arSeq,11)
 []
+
 >>> arSeq = [1,10,30,40,80,110]
 >>> ASE.distArSeq(arSeq)
 []
